@@ -1,0 +1,23 @@
+{
+  "name": "Jekyll",
+  "containerEnv": {
+    "GITHUB_TOKEN": "${localEnv:GITHUB_TOKEN}",
+    "OCTOKIT_ACCESS_TOKEN": "${localEnv:GITHUB_TOKEN}"
+  },
+
+  "image": "mcr.microsoft.com/devcontainers/ruby:1.1.8-3.3", // Will install Ruby 3.3.4 and Ruby LSP
+
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": { "version": "2.55.0" }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": ["esbenp.prettier-vscode"]
+    }
+  },
+
+  "postCreateCommand": {
+    "git": "git config --global --add safe.directory $PWD"
+  }
+}
